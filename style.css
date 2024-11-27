@@ -31,6 +31,7 @@ body {
     border: 2px solid black;
     padding: 12px 14px;
     margin-right: 120px; /* Push towards the center */
+    font-weight: bold; /* Bold the Contact button */
 }
 .navbar a#contact:hover {
     background-color: green;
