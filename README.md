@@ -1,1 +1,0 @@
-# mnaljm.github.io
