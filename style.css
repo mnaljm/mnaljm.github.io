@@ -1,75 +1,189 @@
 body {
+    font-family: sans-serif;
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    background-color: #e5e8eb; /* Revised Body Background */
+    color: #4b6277; /* Revised Text Color (Body) */
 }
-.navbar {
-    position: -webkit-sticky; /* For Safari */
-    position: sticky;
-    top: 0;
-    background-color: white;
-    overflow: hidden;
-    display: flex;
-    justify-content: flex-end;
-    height: 112px; /* Set navbar height */
-    align-items: center; /* Center items vertically */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
-.navbar a {
-    display: block;
-    color: #4f4f4f; /* Dark gray */
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-.navbar a:hover {
-    color: green;
-    text-decoration: underline;
-    text-underline-offset: 6px; /* Double the space between underline and text */
-}
-.navbar a#contact {
-    color: black;
-    font-size: 18px;
-    border: 2px solid black;
-    padding: 12px 14px;
-    margin-right: 120px; /* Push towards the center */
-    font-weight: bold; /* Bold the Contact button */
-}
-.navbar a#contact:hover {
-    background-color: green;
-    color: white;
-    text-decoration: none;
-}
-.header {
-    position: relative;
-    background-image: url('Bg1.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Make the background image static */
-    height: 624px; /* Set background height to 800 pixels */
+
+.wrapper {
+    min-height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 320px; /* Position text 320 pixels from the left */
-    background-color: black; /* Fallback background color */
 }
-.header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+
+main {
+    flex: 1;
+}
+
+header {
+    background: #34495e; /* Header Background and Headings */
+    color: white;
+    padding: 1em 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    color: #ffffff; /* Text in Header/Nav Links */
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+nav a:hover {
+    background-color: #0056d2; /* Link/Submit Button on hover */
+}
+
+/* Basic Styling for other elements */
+section {
+    padding: 20px;
+}
+h1, h2, h3 {
+    color: #34495e; /* Header Background and Headings */
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack navigation vertically */
+        align-items: flex-start; /* Align items to the left */
+        padding: 10px;
+    }
+    nav a {
+        display: block;  /* Make each link a block element */
+        width: 100%;      /* Full width links */
+        text-align: center;/* Center the text */
+        padding: 10px 0;
+        margin-bottom: 5px; /* Add some space between links */
+    }
+}
+
+/* Contact Info Styling */
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1em;
+    background: #f3f5f7; /* Contact Info Background */
+    border-radius: 5px;
+}
+
+.contact-info h2 {
+    margin-top: 0;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 0.5em;
+}
+
+.contact-info a {
+    color: #0056d2; /* Link/Submit Button */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Form Styling */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.contact-methods {
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    z-index: 1; /* Ensure overlay is above the image */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1em;
+    background: #f3f5f7; /* Contact Info Background */
+    border-radius: 5px;
 }
-.header-text {
-    position: relative; /* Ensure text is above the overlay */
-    z-index: 2; /* Ensure text is above the overlay */
-    color: white; /* Ensure text is white */
-    font-size: 65px; /* Increase font size by 2 */
+
+.contact-form, .contact-direct {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .contact-methods {
+        flex-direction: column; /* Stack vertically on smaller screens */
+    }
+    .contact-form, .contact-direct {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+.contact-form label,
+.contact-form input,
+.contact-form textarea {
+    display: block; /* Make labels and inputs stack vertically */
+    width: 100%; /* Full width inputs */
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Add some space between form elements */
+}
+
+.contact-form .form-group {
+    margin-bottom: 1em;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5em;
     font-weight: bold;
 }
-.subheader {
-    font-size: 26px; /* Increase font size by 2 */
-    font-weight: normal;
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #b0b0b0; /* Form Input Border */
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 0.7em;
+    color: #fff;
+    background-color: #0056d2; /* Link/Submit Button */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.contact-form button:hover {
+    background-color: #004a96; /* Hover Button Background */
+}
+
+.contact-direct ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.contact-direct li {
+    margin-bottom: 10px;
+}
+
+.contact-direct a {
+    color: #34495e; /* Link color */
+    text-decoration: none; /* No underline */
 }
